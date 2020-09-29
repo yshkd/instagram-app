@@ -8,17 +8,26 @@
 
 import UIKit
 
+struct EditProfileFormModel {
+    let label: String
+    let placeholder: String
+    var value: String?
+}
+
 class EditProfileViewController: UIViewController, UITableViewDataSource {
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self,
-                           forCellReuseIdentifier: "cell")
+        tableView.register(FormTableViewCell.self,
+                           forCellReuseIdentifier: FormTableViewCell.identifier)
         return tableView
     }()
     
+    private var models = [[EditProfileFormModel]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureModels()
         tableView.tableHeaderView = createTableHeaderView()
         tableView.dataSource = self
         view.addSubview(tableView)
@@ -31,6 +40,24 @@ class EditProfileViewController: UIViewController, UITableViewDataSource {
                                                            style: .plain,
                                                            target: self,
                                                            action: #selector(didTapCancel))
+    }
+    
+    private func configureModels(){
+        let section1Labels = ["名前", "ユーザーネーム", "コメント"]
+        var section1 = [EditProfileFormModel]()
+        for label in section1Labels {
+            let model = EditProfileFormModel(label: label, placeholder: "\(label)を入力", value: nil)
+            section1.append(model)
+        }
+        models.append(section1)
+        
+        let section2Labels = ["Email", "電話番号", "性別"]
+        var section2 = [EditProfileFormModel]()
+        for label in section2Labels {
+            let model = EditProfileFormModel(label: label, placeholder: "\(label)を入力", value: nil)
+            section2.append(model)
+        }
+        models.append(section2)
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,21 +92,30 @@ class EditProfileViewController: UIViewController, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return models.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return models[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Hello world"
+        let model = models[indexPath.section][indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: FormTableViewCell.identifier, for: indexPath) as! FormTableViewCell
+        cell.configure(with: model)
+        cell.delegate = self
         return cell
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard section == 1 else {
+            return nil
+        }
+        return "個人情報"
+    }
+    
     @objc private func didTapSave() {
-        
+        dismiss(animated: true, completion: nil)
     }
     
     @objc private func didTapCancel() {
@@ -103,5 +139,11 @@ class EditProfileViewController: UIViewController, UITableViewDataSource {
         actionSheet.popoverPresentationController?.sourceRect = view.bounds
         
         present(actionSheet, animated: true)
+    }
+}
+
+extension EditProfileViewController: FormTableViewCellDelegate {
+    func formTableView(_ cell: FormTableViewCell, didUpdateField updatedModel: EditProfileFormModel) {
+        print(updatedModel.value ?? "nil")
     }
 }

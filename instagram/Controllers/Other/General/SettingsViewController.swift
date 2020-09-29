@@ -94,6 +94,7 @@ class SettingsViewController: UIViewController {
         let vc = EditProfileViewController()
         vc.title = "プロフィール編集"
         let navVC = UINavigationController(rootViewController: vc)
+        navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true)
     }
     
