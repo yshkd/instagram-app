@@ -33,6 +33,10 @@
 		D151C9A6251D057800953623 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D151C9A5251D057800953623 /* AuthManager.swift */; };
 		D151C9A8251D05C400953623 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D151C9A7251D05C400953623 /* StorageManager.swift */; };
 		D151C9AA251D0A6200953623 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D151C9A9251D0A6200953623 /* Extensions.swift */; };
+		D1557F3725239FBE008A03DA /* IGFeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1557F3625239FBE008A03DA /* IGFeedPostTableViewCell.swift */; };
+		D1557F3B2523A2A4008A03DA /* IGFeedPostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1557F3A2523A2A4008A03DA /* IGFeedPostHeaderTableViewCell.swift */; };
+		D1557F3F2523A331008A03DA /* IGFeedPostActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1557F3E2523A331008A03DA /* IGFeedPostActionsTableViewCell.swift */; };
+		D1557F422523A34B008A03DA /* IGFeedPostGeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1557F412523A34B008A03DA /* IGFeedPostGeneralTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +69,10 @@
 		D151C9A5251D057800953623 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		D151C9A7251D05C400953623 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		D151C9A9251D0A6200953623 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D1557F3625239FBE008A03DA /* IGFeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostTableViewCell.swift; sourceTree = "<group>"; };
+		D1557F3A2523A2A4008A03DA /* IGFeedPostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		D1557F3E2523A331008A03DA /* IGFeedPostActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostActionsTableViewCell.swift; sourceTree = "<group>"; };
+		D1557F412523A34B008A03DA /* IGFeedPostGeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostGeneralTableViewCell.swift; sourceTree = "<group>"; };
 		FF1CB98D88F909206149E390 /* Pods-instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.debug.xcconfig"; path = "Target Support Files/Pods-instagram/Pods-instagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +138,7 @@
 		D151C97B251CF22A00953623 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D1557F3525239F6B008A03DA /* Cells */,
 				D151C97E251CF2B900953623 /* Storyboards */,
 				D151C96F251CF1D200953623 /* Assets.xcassets */,
 			);
@@ -209,6 +218,25 @@
 				D151C99C251CF4EE00953623 /* PublishPostViewController.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		D1557F3525239F6B008A03DA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D1557F392523A1FF008A03DA /* Home feed */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D1557F392523A1FF008A03DA /* Home feed */ = {
+			isa = PBXGroup;
+			children = (
+				D1557F3625239FBE008A03DA /* IGFeedPostTableViewCell.swift */,
+				D1557F3A2523A2A4008A03DA /* IGFeedPostHeaderTableViewCell.swift */,
+				D1557F3E2523A331008A03DA /* IGFeedPostActionsTableViewCell.swift */,
+				D1557F412523A34B008A03DA /* IGFeedPostGeneralTableViewCell.swift */,
+			);
+			path = "Home feed";
 			sourceTree = "<group>";
 		};
 		F82AB5AA80A6CCFF59ADFE60 /* Pods */ = {
@@ -342,19 +370,23 @@
 				D151C99D251CF4EE00953623 /* PublishPostViewController.swift in Sources */,
 				D151C982251CF33900953623 /* CameraViewController.swift in Sources */,
 				D151C984251CF35200953623 /* NotificationViewController.swift in Sources */,
+				D1557F3B2523A2A4008A03DA /* IGFeedPostHeaderTableViewCell.swift in Sources */,
 				D151C98C251CF3C800953623 /* RegistrationViewController.swift in Sources */,
 				D151C99B251CF4DC00953623 /* PostEditorViewController.swift in Sources */,
 				D151C9A8251D05C400953623 /* StorageManager.swift in Sources */,
 				D151C98F251CF41B00953623 /* PostViewController.swift in Sources */,
 				D151C9A4251D04D400953623 /* DatabaseManager.swift in Sources */,
+				D1557F3725239FBE008A03DA /* IGFeedPostTableViewCell.swift in Sources */,
 				D151C96B251CF1CE00953623 /* HomeViewController.swift in Sources */,
 				D151C999251CF4A800953623 /* SearchResultViewController.swift in Sources */,
 				D151C98A251CF3B900953623 /* LoginViewController.swift in Sources */,
+				D1557F422523A34B008A03DA /* IGFeedPostGeneralTableViewCell.swift in Sources */,
 				D151C997251CF49200953623 /* SearchViewController.swift in Sources */,
 				D151C986251CF35D00953623 /* ProfileViewController.swift in Sources */,
 				D151C9A6251D057800953623 /* AuthManager.swift in Sources */,
 				D151C967251CF1CE00953623 /* AppDelegate.swift in Sources */,
 				D151C969251CF1CE00953623 /* SceneDelegate.swift in Sources */,
+				D1557F3F2523A331008A03DA /* IGFeedPostActionsTableViewCell.swift in Sources */,
 				D151C995251CF48300953623 /* ListViewController.swift in Sources */,
 				D151C993251CF47400953623 /* SettingsViewController.swift in Sources */,
 			);
