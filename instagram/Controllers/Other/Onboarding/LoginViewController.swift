@@ -26,8 +26,6 @@ class LoginViewController: UIViewController {
         field.layer.masksToBounds = true
         field.layer.cornerRadius = Constants.cornerRadius
         field.backgroundColor = .secondarySystemBackground
-        field.layer.borderWidth = 1.0
-        field.layer.borderColor = UIColor.secondaryLabel.cgColor
         return field
     }()
     
@@ -43,8 +41,6 @@ class LoginViewController: UIViewController {
         field.layer.masksToBounds = true
         field.layer.cornerRadius = Constants.cornerRadius
         field.backgroundColor = .secondarySystemBackground
-        field.layer.borderWidth = 1.0
-        field.layer.borderColor = UIColor.secondaryLabel.cgColor
         return field
     }()
     
@@ -182,6 +178,33 @@ class LoginViewController: UIViewController {
             let password = passwordField.text, !password.isEmpty, password.count >= 8 else {
                 return
         }
+        
+        var username: String?
+        var email: String?
+        
+        if usernameEmail.contains("@"), usernameEmail.contains(".") {
+            email = usernameEmail
+        }
+        else {
+            username = usernameEmail
+        }
+        
+        AuthManager.shared.loginUser(username: username, email: email, password: password) { success in
+            DispatchQueue.main.async {
+                if success {
+                    self.dismiss(animated: true, completion: nil)
+                }
+                else {
+                    let alert = UIAlertController(title: "ログインエラー",
+                                                  message: "ログインができませんでした",
+                                                  preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "閉じる",
+                                                  style: .cancel,
+                                                  handler: nil))
+                    self.present(alert, animated: true)
+                }
+            }
+        }
     }
     
     @objc private func didTapTermsButton() {
@@ -202,6 +225,7 @@ class LoginViewController: UIViewController {
     
     @objc private func didTapCreateAccountButton() {
         let vc = RegistrationViewController()
+        vc.title = "アカウント登録"
         present(vc, animated: true)
     }
 }
