@@ -41,6 +41,7 @@
 		D1557F492523DBC6008A03DA /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1557F482523DBC6008A03DA /* PhotoCollectionViewCell.swift */; };
 		D1557F4D2523DC80008A03DA /* ProfileInfoHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1557F4C2523DC80008A03DA /* ProfileInfoHeaderCollectionReusableView.swift */; };
 		D1557F512523DCDA008A03DA /* ProfileTabsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1557F502523DCDA008A03DA /* ProfileTabsCollectionReusableView.swift */; };
+		D1557F6925253F0C008A03DA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1557F6825253F0C008A03DA /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		D1557F482523DBC6008A03DA /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		D1557F4C2523DC80008A03DA /* ProfileInfoHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		D1557F502523DCDA008A03DA /* ProfileTabsCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabsCollectionReusableView.swift; sourceTree = "<group>"; };
+		D1557F6825253F0C008A03DA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		FF1CB98D88F909206149E390 /* Pods-instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.debug.xcconfig"; path = "Target Support Files/Pods-instagram/Pods-instagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +159,7 @@
 		D151C97C251CF22D00953623 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D1557F6825253F0C008A03DA /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				D151C984251CF35200953623 /* NotificationViewController.swift in Sources */,
 				D1557F3B2523A2A4008A03DA /* IGFeedPostHeaderTableViewCell.swift in Sources */,
 				D151C98C251CF3C800953623 /* RegistrationViewController.swift in Sources */,
+				D1557F6925253F0C008A03DA /* Models.swift in Sources */,
 				D151C99B251CF4DC00953623 /* PostEditorViewController.swift in Sources */,
 				D1557F452523CE0B008A03DA /* FormTableViewCell.swift in Sources */,
 				D1557F512523DCDA008A03DA /* ProfileTabsCollectionReusableView.swift in Sources */,
